@@ -1,1 +1,4 @@
-/docker/dz_1/docker-basic/
+*.log
+env/
+.vscode
+.idea
