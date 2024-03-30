@@ -8,6 +8,6 @@ EXPOSE 80
 WORKDIR /App
 COPY --from=build /work/WebApplication_DIT_Docker/bin/Debug/net6.0/*.dll /App/ 
 COPY --from=build /work/WebApplication_DIT_Docker/bin/Debug/net6.0/*.json /App/
-ENV HOSTNAME=localhost
-ENV PORT=5000
+#ENV HOSTNAME=lcaolhost
+#ENV PORT=5000
 ENTRYPOINT ["dotnet", "/App/WebApplication_DIT_Docker.dll"]

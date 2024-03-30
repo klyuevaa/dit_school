@@ -2,9 +2,13 @@ version: '3.9'
 services:
   app-net:
     build: .
+    container_name: my_app-net
+    hostname: my_app
 #    environment:
-#      - 'HOSTNAME=localhost'
+#      - 'HOSTNAME=my_app'
 #      - 'PORT=5000'
+    networks:
+      - my_network  
     ports:
       - "5000:80"
     deploy:
@@ -12,4 +16,7 @@ services:
         limits:
           cpus: '1'
           memory: '1G'    
-   
+networks:
+  my_network:
+    driver: bridge
+    name: my_network  
